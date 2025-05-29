@@ -59,7 +59,7 @@ img {width:100%;}
 .page2 .box {width:100%; margin-bottom:8%;}
 .page2 .box .box_txt {padding-top:10px; font-size:30px; text-align:center; line-height:65px; word-break:keep-all;}
 .page2 .box.refresh .box_txt, .page2 .box.scent .box_txt {padding-top:20px;} 
-.page2 .box .box_txt .p {color:#33246e; font-size:70px;}
+.page2 .box .box_txt .p {color:#33246e; font-size:40px;}
 .page2 .box .box_txt .small {font-size:40px; line-height:65px; font-family:'Pretendard-Regular', sans-serif;}
 .page2 .box .box_choice {width:100%; height:60px; border:3px solid #000; border-radius:50px; box-sizing:border-box; overflow:hidden; margin-top:15px;}
 .page2 .box .box_choice:after {display:block; content:""; clear:both;}
@@ -106,8 +106,8 @@ img {width:100%;}
 
 .page2 .toon {width:75%; margin:0 auto 10%;} 
 
-.page2 .btn {max-width:360px; height:100px; background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c152d), color-stop(1, #33246e)); border-radius:30px;margin : 0 auto;}
-.page2 .btn a {display:block; width:100%; font-size:60px; color:#fff; text-align:center; line-height:115px;}
+.page2 .btn {max-width:360px; height:65px; background: -webkit-gradient(linear, left top, right top, color-stop(0, #0c152d), color-stop(1, #33246e)); border-radius:30px;margin : 0 auto;}
+.page2 .btn a {display:block; width:100%; font-size:30px; color:#fff; text-align:center; line-height:65px;}
 
 
 /*page3*/
