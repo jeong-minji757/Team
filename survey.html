@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YEOUN</title>
+  <link rel="shortcut icon" href="image/cup_u.png">
+
+
+ <link rel="stylesheet" type="text/css" href="css/reset1.css">
+<link rel="stylesheet" type="text/css" href="css/style1.css?v=1">
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js?v=1"></script>
+
+
+  <link rel="stylesheet" href="js/sweetalert/dist/sweetalert.css">
+  <script src="js/sweetalert/dist/sweetalert.min.js?v=1"></script>
+
+  <script src="js/meetingfan.js?v=1" charset='utf-8'></script>
+  <script type="text/javascript">
+
+  
+  <!--
+$(document).bind('contextmenu', function(e){
+    return false;
+}); 
+ 
+$(document).ready(function(e) {
+	// 테스트 시작하기
+    $("#btn_start").click(function () {
+		$('.page1').hide();
+		$('.page2').show();
+		// $('#page2_character').html('<img src="/aiSommelier/img/character2.gif" />');
+    });
+
+
+	// 결과보기
+    $("#btn_result").click(function () {
+
+		if( step_idx <= 1 ) step_idx = 1;
+		step_idx++;
+
+		if( step_idx <= 6 ){
+		    $('#step1').hide();
+		    $('#step2').hide();
+		    $('#step3').hide();
+		    $('#step4').hide();
+		    $('#step5').hide();
+		    $('#step6').hide();
+
+		    $('#step'+step_idx).show();
+		    // $('#page2_character').html('<img src="/aiSommelier/img/character2.gif" />');
+			return false;
+		}
+
+		if( acl_idx < 1 ){
+			swal({html:true, title: "", text: '<span style="">알콜도수를 선택하세요.</span>', type: "warning", confirmButtonColor: "#530f86"});
+			return false;
+		}
+		else{
+			$('.page2').hide();
+			$('.page3').show();
+			$('#page3_character').html('<img src="/aiSommelier/img/character3.gif" />');
+
+			setTimeout(function() { 
+				ShowResult();
+			}, 3000);
+		}
+    });
+}); 
+
+//-->
+</script>
+</head>
+
+<body>
+  <div class="scrollTop_btn">
+    scroll top button
+  </div>
+  <header>
+    <div class="rel">
+      <div class="header_left">
+        <div class="header_tit">
+          <a href="#">
+            <img src="image/logo.png" alt="logo" class="header_logo">
+          </a>
+        </div>
+      </div>
+      <div class="header_right">
+        <ul class="h_nav">
+          <li>
+            <a class="gnb-link" href="#">여운소개</a>
+            <ul class="magamenu">
+              <li><a href="#">이달의 시음회</a></li>
+              <li><a href="#">시음회 예약</a></li>
+              <li><a href="#">News & Events</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="gnb-link" href="#">전통주의 종류</a>
+            <ul class="magamenu">
+              <li><a href="#">탁주</a></li>
+              <li><a href="#">약·청주</a></li>
+              <li><a href="#">증류주</a></li>
+              <li><a href="#">과실주</a></li>
+              <li><a href="#">기타주류</a></li>
+            </ul>
+          </li>
+          <li><a class="gnb-link" href="#">나만의 술 찾기</a></li>
+          <li>
+            <a class="gnb-link" href="#">한달의 여운</a>
+            <ul class="magamenu">
+              <li><a href="#">한달의 여운 구독하기</a></li>
+            </ul>
+          </li>
+          <li class="site_group">
+            <div class="site_inner">
+              <a href="#">로그인</a>
+              <a href="#">회원가입</a>
+            </div>
+          </li>
+          <div class="magamenu-bg"></div>
+        </ul>
+        <a href="#" class="mob_btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+
+
+      <div class="subNav">
+        <div class="inner">
+          <div class="sub_menu"> 
+            <ul class="depth1">
+              <li>
+                <span>여운소개</span>
+                <a href="#" class="sub_tit">여운 소개</a>  <!-- pc용 -->
+                <ul class="depth2">
+                  <li><a href="#">이달의 시음회</a></li>
+                  <li><a href="#">시음회 예약</a></li>
+                  <li><a href="#">News & Events</a></li>
+                </ul>
+              </li>
+              <li>
+                <span>전통주의 종류</span>
+                <a href="#" class="sub_tit">전통주의 종류</a>
+                <ul class="depth2">
+                  <li><a href="#">탁주</a></li>
+                  <li><a href="#">약·청주</a></li>
+                  <li><a href="#">증류주</a></li>
+                  <li><a href="#">과실주</a></li>
+                  <li><a href="#">기타주류</a></li>
+                </ul>
+              </li>
+              <li>
+                <span>나만의 술 찾기</span>
+                <a href="#" class="sub_tit">나만의 술 찾기</a> 
+              </li>
+              <li>
+                <span>한달의 여운</span>
+                <a href="#" class="sub_tit">한달의 여운</a>
+                <ul class="depth2">
+                  <li><a href="#">한달의 여운 구독하기</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>     
+        <div class="site_group">  
+          <a href="#" class="site_name">고객</a>
+          <a href="#" class="site_name">이용약관</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+<body>
+<div class="wrap" style="text-align:center;">
+  <div style="width:100%;max-width:1080px;margin:0 auto;text-align:center;">
+	<div class="page1">
+    	<!-- <div class="logo_b"><img src="image/logo.png"></div> -->
+        <div class="txt">
+        	전통의 향<span>마음에 머무는 감정</span>
+            <p>YEOUN</p>
+        </div>
+        <!-- <div class="toon"><img src="image/character1.gif"></div> -->
+
+        <div class="btn-bg-svg"><img src="image/bigtitle.svg" alt="빅로고"></div>
+        
+
+
+        <div class="btn">
+        	<a href="javascript:;" id="btn_start">테스트 시작하기</a>
+			<p style="font-size:11px; margin-top:20px; color: white; margin-top: 320px;",>*지나친 음주는 뇌졸증, 기억력 손상이나 치매를 유발합니다. <br>임신 중 음주는 기형아 출생 위험을 높입니다.</p>
+        </div>
+    </div>
+
+
+
+	<div class="page2" style="display:none;">
+    	<div class="top">
+        	<div class="top_txt"><span>YEOUN 소믈리에</span>나에게 잘 맞는 우리술은?</div>
+            <div class="top_logo"></div>
+        </div>
+
+        <div class="content">   
+        	<!-- 단맛 -->
+			<div class="box sweet" id="step1">
+            	<div class="box_txt"><p>원하시는 <span class="p">단맛</span>의 정도를</p>선택해 주세요.</div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">1</li>
+                    <li class="two">2</li>
+                    <li class="three">3</li>
+                    <li class="four">4</li>
+                    <li class="five">5</li>
+                </ul>
+            </div>
+
+        
+        	<!-- 신맛 -->
+        	<div class="box sour" id="step2" style="display:none;">
+            	<div class="box_txt"><p>원하시는 <span class="p">신맛</span>의 정도를</p>선택해 주세요.</div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">1</li>
+                    <li class="two">2</li>
+                    <li class="three">3</li>
+                    <li class="four">4</li>
+                    <li class="five">5</li>
+                </ul>
+            </div>
+
+        
+       	    <!-- 청량감 -->
+        	<div class="box refresh" id="step3" style="display:none;">
+            	<div class="box_txt"><p>원하시는 <span class="p">청량감</span>을</p><p>선택해 주세요.</p><span class="small">(뒷맛이 깔끔한 정도)</span></div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">1</li>
+                    <li class="two">2</li>
+                    <li class="three">3</li>
+                    <li class="four">4</li>
+                    <li class="five">5</li>
+                </ul>
+            </div>
+            
+        
+        	<!-- 바디감 -->
+        	<div class="box body" id="step4" style="display:none;">
+            	<div class="box_txt"><p>원하시는 <span class="p">바디감</span>을</p>선택해 주세요.</div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">1</li>
+                    <li class="two">2</li>
+                    <li class="three">3</li>
+                    <li class="four">4</li>
+                    <li class="five">5</li>
+                </ul>
+            </div>
+            
+        
+        	<!-- 향 -->
+        	<div class="box scent" id="step5" style="display:none;">
+            	<div class="box_txt"><p>원하시는 <span class="p">향</span>의 정도를</p><p>선택해 주세요.<p><span class="small">(냄새의 진한 정도)</span></p></div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">1</li>
+                    <li class="two">2</li>
+                    <li class="three">3</li>
+                    <li class="four">4</li>
+                    <li class="five">5</li>
+                </ul>
+            </div>
+        
+        	<!-- 알콜도수 -->
+        	<div class="box acl" id="step6" style="display:none;">
+            	<div class="box_txt"><p>원하시는 <span class="p">알콜도수</span>를</p>선택해 주세요.</div>
+                <ul class="box_choice">
+                	<li class="zero box_choice_graph_bg"></li>
+                	<li class="one"></li>
+                    <li class="two"></li>
+                    <li class="three"></li>
+                    <li class="four"></li>
+                    <li class="five"></li>
+                    <li class="six"></li>
+                    <li class="seven"></li>
+                    <li class="eight"></li>
+                    <li class="nine"></li>
+                    <li class="ten"></li>
+                </ul>
+                <ul class="box_number">
+                	<li class="zero">0</li>
+                	<li class="one">5</li>
+                    <li class="two">10</li>
+                    <li class="three">15</li>
+                    <li class="four">20</li>
+                    <li class="five">25</li>
+                    <li class="six">30</li>
+                    <li class="seven">35</li>
+                    <li class="eight">40</li>
+                    <li class="nine">45</li>
+                    <li class="ten">50</li>
+                </ul>
+            </div>
+
+            <div class="toon" id="page2_character"></div>
+
+            <div class="btn">
+            	<a href="javascript:;" id="btn_result">다음으로</a>
+				<p style="font-size:11px">*지나친 음주는 뇌졸증, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다.</p>
+            </div>
+
+        </div>
+    </div>
+
+	
+	<div class="page3" style="display:none;">
+    	<div class="top">
+        	<div class="top_txt"><span>여운 소믈리에</span>나에게 잘 맞는 우리술은?</div>
+            <div class="top_logo"></div>
+        </div>
+        <div class="txt">
+        	나에게 가장 잘 맞는<span>우리술을 찾고 있습니다<i>!</i></span>
+        </div>
+        <div class="toon" id="page3_character"></div>
+    </div>
+	
+	<div class="page4" style="display:none;">
+    	<div class="top">
+        	<div class="top_txt"><span>YEOUN 소믈리에</span>나에게 잘 맞는 우리술은?</div>
+            <div class="top_logo"></div>
+        </div>
+        <div class="content">  
+		  <div id="id_result">
+        	<!-- box1 -->
+        	<!-- <div class="box">
+				<div class="sool">
+					<div class="type">일반증류주</div>
+                    <img src="/aiSommelier/img/sool/01.jpg" />
+                </div>
+                <ul class="box_con">
+					<li class="brand">양촌감(영) / 충남 논산</li>
+                    <li class="name">감보드카</li>
+                    <li class="volume"><span>용량</span>375ml</li>
+                    <li class="price"><span>가격</span>14,000원(인터넷 구매가능)</li>
+                    <li class="box_con_img">
+						<div class="level"><img src="/aiSommelier/img/level/01.png" /></div>
+                        <div class="graph"><img src="/aiSommelier/img/graph/01.png" /></div>
+                    </li>
+                </ul>
+            </div>
+            
+			<div class="box">
+				<div class="sool">
+					<div class="type">과실주</div>
+                    <img src="/aiSommelier/img/sool/02.jpg" />
+                </div>
+                <ul class="box_con">
+					<li class="brand">청도감와인㈜ / 경북 청도</li>
+                    <li class="name">감그린 스페셜</li>
+                    <li class="volume"><span>용량</span>750ml</li>
+                    <li class="price"><span>가격</span>25,000원(인터넷 구매가능)</li>
+                    <li class="box_con_img">
+						<div class="level"><img src="/aiSommelier/img/level/02.png" /></div>
+                        <div class="graph"><img src="/aiSommelier/img/graph/02.png" /></div>
+                    </li>
+                </ul>
+            </div>
+            
+			<div class="box">
+				<div class="sool">
+					<div class="type">과실주</div>
+                    <img src="/aiSommelier/img/sool/03.jpg" />
+                </div>
+                <ul class="box_con">
+					<li class="brand">청도감와인㈜ / 경북 청도</li>
+                    <li class="name">감그린 아이스와인</li>
+                    <li class="volume"><span>용량</span>750ml</li>
+                    <li class="price"><span>가격</span>89,000원(인터넷 구매가능)</li>
+                    <li class="box_con_img">
+						<div class="level"><img src="/aiSommelier/img/level/03.png" /></div>
+                        <div class="graph"><img src="/aiSommelier/img/graph/03.png" /></div>
+                    </li>
+                </ul>
+            </div> -->
+		  </div>
+
+            <div class="btn">
+            	<a href="javascript:location.reload();">처음으로</a><br>
+				<p style="font-size:11px">*지나친 음주는 뇌졸증, 기억력 손상이나 치매를 유발합니다. 임신 중 음주는 기형아 출생 위험을 높입니다.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </main>
+
+
+
+  
+  <footer>
+    <!-- PC 추가________________________start -->
+    <div class="dsk_only">
+      <div class="rel">
+        <div class="footer-logo">
+          <img src="image/bottom-logo.png" alt="logo">
+        </div>
+        <ul class="ft-menu">
+          <li>여운 소개</li>
+          <li>시음회 예약하기</li>
+          <li>나만의 술 찾기</li>
+          <li>여운 구독 및 체험하기</li>
+        </ul>
+        <div class="ft-content">
+          <p>
+            (주)대한전통주협회 대표 박이서 대한전통주협회 경상남도 창원시 성산구 삼귀로 411-2 (귀산동) <br>
+            사업자 등록번호 693-85-02195 [사업자정보확인] 통신판매업 신고번호 제2020-창원성산-388호 <br>
+            개인정보관리책임자 이현하 070-4105-0977 CPO : 박이서 (yeoun.official@gmail.com)
+          </p>
+        </div>
+        <address>
+          © 2025 대한전통주협회. All rights reserved.
+        </address>
+      </div>
+    </div>
+    <div class="mob_only">
+      <h4>
+        <a href="#">
+          <img src="image/bottom-logo.png" alt="logo">
+        </a>
+      </h4>
+      <p class="copy">
+        Copyright &copy;2025 CARPOOL
+      </p>
+    </div>
+  </footer>
+
+  
+  <!-- Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
